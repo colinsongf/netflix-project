@@ -57,20 +57,24 @@ def print_topk_all(j,n,k): # j = total number of users, n = number of users we w
 	userDict=compute_topk_all(k)
 	movieDict=compute_rm_all()
 	randUsers = []
-	for x in range(n):
-		randUsers.append(randint(1,j))
-	for userID in randUsers:
-	 	currUser=userDict[userID]
+	for x in range(1,n):
+		currUserID=randint(1,j)
+	 	currUser=userDict[currUserID]
 		topK=currUser.top_k
 		print "======================"
-		print "user",userID
+		print "user", currUserID
 		print "======================"
+		topMoviePos=1 #
 		for movieTup in topK:
+			print "------------------"
 			currMovie=movieTup[0]
 			currRating=movieTup[1]
+			print "#",topMoviePos,"top movie for this user"
+			print "Movie's weighted rating for user:", currRating
 			currMovie.str()
-			print currRating
-print_topk_all(943,10,5)
+			print "------------------"
+			topMoviePos=topMoviePos+1
+print_topk_all(943,3,50)
 
 '''
 unknown|0

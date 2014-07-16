@@ -31,6 +31,3 @@ def read_out_ratings():
 	for k,v in ratingsDictMovieID.iteritems():
 		for item in v: #returns every rating object in every list in ratings 
 			print item.userID
-
-
-read_out_ratings()

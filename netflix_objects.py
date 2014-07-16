@@ -16,10 +16,11 @@ class movie:
 		ratingsc=len(temp_list)
 		self.r_m = (float(ratings_sum)/float(ratingsc))
 	def str(self):
-		print "ID: ", self.ID
 		print "Title: ",self.title
+		print "Movie ID: ", self.ID
 		print "Date: ",self.date
-		print "r_m: ",self.r_m
+		print "IMDB URL: " + self.URL
+		print "Average star rating by all users:",self.r_m
 
 	def calculate_rm(self,ratings):
 		myRatings = ratings[self.ID] # list of ratings objects
