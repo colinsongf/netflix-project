@@ -60,12 +60,11 @@ def print_topk_all(j,n,k): # j = total number of users, n = number of users we w
 	for x in range(1,n):
 		currUserID=randint(1,j)
 	 	currUser=userDict[currUserID]
-		topK=currUser.top_k
 		print "======================"
-		print "user", currUserID
+		currUser.str()
 		print "======================"
 		topMoviePos=1 #
-		for movieTup in topK:
+		for movieTup in currUser.top_k:
 			print "------------------"
 			currMovie=movieTup[0]
 			currRating=movieTup[1]

@@ -20,7 +20,7 @@ class movie:
 		print "Movie ID: ", self.ID
 		print "Date: ",self.date
 		print "IMDB URL: " + self.URL
-		print "Average star rating by all users:",self.r_m
+		print "Average star rating for this movie by all users:",self.r_m
 
 	def calculate_rm(self,ratings):
 		myRatings = ratings[self.ID] # list of ratings objects
@@ -48,6 +48,13 @@ class user:
 		for x in range(0,18):
 			self.pug.append(0)
 		self.top_k=[]
+
+	def str(self):
+		print "Profile for user",self.ID
+		print "User age:", self.age
+		print "User gender: "+self.gender
+		print "User occupation: "+self.occupation
+		print "User ZIP: " + self.ZIP
 	def compute_ug(self,movieDict,ratingDictUserID):
 		myRatings=ratingDictUserID[int(self.ID)]
 		tempRatingList=defaultdict(list)
